@@ -1,0 +1,42 @@
+{
+  "model": "claude-opus-4-5",
+  "autoAccept": false,
+  "permissions": {
+    "allow": [
+      "git status",
+      "git diff",
+      "git log",
+      "git add",
+      "git commit",
+      "git push",
+      "git branch",
+      "git checkout",
+      "git fetch",
+      "git pull",
+      "bun",
+      "npm",
+      "yarn",
+      "pnpm",
+      "ls",
+      "cat",
+      "pwd",
+      "echo",
+      "mkdir",
+      "cp",
+      "mv",
+      "rm",
+      "find",
+      "grep"
+    ],
+    "deny": [
+      "rm -rf /",
+      "*sudo*",
+      "*password*",
+      "*token*",
+      "*secret*"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": ".claude/hooks/post-tool.sh"
+  }
+}
