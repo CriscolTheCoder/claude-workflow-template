@@ -44,6 +44,9 @@ cd "$PROJECT_PATH"
 
 # Initialize git
 git init
+# Set local git identity (falls back to defaults if global is missing)
+git config user.email "$(git config --global user.email 2>/dev/null || echo 'developer@local.dev')"
+git config user.name "$(git config --global user.name 2>/dev/null || echo 'Claude Developer')"
 git add -A
 git commit -m "chore: initial scaffold from claude-workflow-template"
 
