@@ -7,6 +7,11 @@ set -euo pipefail
 # Usage: bash spawn-project.sh <project-name>
 # ============================================================
 
+# Ensure GitHub CLI is in PATH on Windows/Git Bash
+if ! command -v gh &> /dev/null; then
+    export PATH="$PATH:/c/Program Files/GitHub CLI:/cmd:/mingw64/bin"
+fi
+
 TEMPLATE_DIR="/c/Users/huiqi/claude-workflow-template"
 PROJECTS_DIR="/c/Users/huiqi/Projects"
 PROJECT_NAME="${1:-}"
